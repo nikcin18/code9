@@ -4,5 +4,5 @@ variable "my_name" {
 
 variable "code9_prefix" {
   type = string
-  default = "code9-bucket"
+  default = "moj-bucket"
 }

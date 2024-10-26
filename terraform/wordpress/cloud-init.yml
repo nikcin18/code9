@@ -7,35 +7,11 @@ packages:
 write_files:
   - content: |
       services:
-        db:
-          image: mariadb:10.6.4-focal
-          command: '--default-authentication-plugin=mysql_native_password'
-          volumes:
-            - db_data:/var/lib/mysql
-          restart: always
-          environment:
-            - MYSQL_ROOT_PASSWORD=somewordpress
-            - MYSQL_DATABASE=wordpress
-            - MYSQL_USER=wordpress
-            - MYSQL_PASSWORD=wordpress
-          expose:
-            - 3306
-            - 33060
-        wordpress:
-          image: wordpress:latest
-          volumes:
-            - wp_data:/var/www/html
+        echo:
+          image: mendhak/http-https-echo
           ports:
-            - 80:80
+            - 80:8888
           restart: always
-          environment:
-            - WORDPRESS_DB_HOST=db
-            - WORDPRESS_DB_USER=wordpress
-            - WORDPRESS_DB_PASSWORD=wordpress
-            - WORDPRESS_DB_NAME=wordpress
-      volumes:
-        db_data:
-        wp_data:
     path: /home/ec2-user/wordpress/docker-compose.yml
     permissions: '0644'
     owner: ec2-user:ec2-user

@@ -27,6 +27,7 @@ resource "aws_instance" "wordpress_ec2_instance" {
   vpc_security_group_ids = [aws_security_group.allow_all.id]
   associate_public_ip_address = true
   user_data = file("cloud-init.yml")
+  user_data_replace_on_change=true
   tags = {
     Name = "${local.wordpress_ec2_name}"
   }

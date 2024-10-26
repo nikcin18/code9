@@ -1,9 +1,9 @@
 variable "my_name" {
   type = string
-  default = "vlada-code9"
+  default = "nikcin18"
 }
 
 variable "code9_prefix" {
   type = string
-  default = "code9-bucket"
+  default = "moj-bucket"
 }
